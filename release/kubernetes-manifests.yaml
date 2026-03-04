@@ -813,13 +813,13 @@ metadata:
   labels:
     app: frontend
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: frontend
   ports:
-  - name: http
-    port: 80
+  - port: 80
     targetPort: 8080
+    nodePort: 30007
 ---
 apiVersion: v1
 kind: ServiceAccount
